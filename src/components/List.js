@@ -1,25 +1,25 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Item from './Item';
 
 class List extends Component {
 
-    constructor(props){
+    constructor (props) {
         super(props);
-        this.state ={
+        this.state = {
             colors: this.props.colors
         }
     }
 
     render() {
 
-        const styles ={
+        const styles = {
             list: {
                 minHeight: "100px"
             }
         };
 
-        const colors = this.state.colors.map((itm) =>
-            <Item fact={itm.fact} color={itm.color} name={itm.name} image={itm.image}/>
+        const colors = this.state.colors.map((itm, idx) =>
+            <Item fact={itm.fact} color={itm.color} key={itm.name + idx} name={itm.name} image={itm.image} />
         );
 
         return (
